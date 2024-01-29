@@ -1,0 +1,33 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Home</h1>
+</div>
+<a href="/create" class="btn btn-success">Add Data</a>
+<br> <br>
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">English Text</th>
+        <th scope="col">Khmer Text</th>
+        <th scope="col">Imgage Path</th>
+        <th scope="col">Remark</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% datas.forEach(data => { %>
+        <tr>
+            <th scope="row"><%= data.englishText %></th>
+            <td><%= data.khmerText %></td>
+            <td><%= data.imgPath %></td>
+            <td><%= data.remark %></td>
+            <td>
+                <form action="/delete/<%= data.id %>" method="post">
+                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                </form>
+            </td>
+        </tr>
+        <% }) %>
+
+
+    </tbody>
+  </table>

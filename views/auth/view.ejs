@@ -1,0 +1,23 @@
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">Password</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(user => { %>
+            <tr>
+              
+              <td scope="row"><%= user.username %></td>
+              <td><%= user.password %></td>
+              <td>
+                <a onclick="myFunction('<%= user.id %>')"   class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+              </td>
+            </tr>
+    
+          <% }) %>
+    </tbody>
+</table>
+

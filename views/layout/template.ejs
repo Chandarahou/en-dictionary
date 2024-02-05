@@ -96,6 +96,11 @@
 
                         <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
                         <% if (isAuthenticated) { %>
+                            <div class="container">                        
+                                <li>
+                                    <a href="" class="btn btn-outline-primary"><%= us.username %></a>
+                                </li>
+                            </div>
                         <div class="container">                        
                             <li>
                                 <form action="/user/logout" method="post">
@@ -103,11 +108,7 @@
                                 </form>
                             </li>
                         </div>
-                        <div class="container">                        
-                            <li>
-                                    <button class="btn-outline-primary ">Logout</button>
-                            </li>
-                        </div>
+
                         <% } %>
                         <!-- Nav Item - User Information -->
                         <!-- <li class="nav-item dropdown no-arrow">

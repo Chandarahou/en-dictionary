@@ -41,11 +41,11 @@ exports.postLogin = (req,res)=>{
             req.session.user = user
             res.redirect('/')
         }else{
-            res.render('auth/login',{layout:false,errors:"Password is incorrect",isAuthenticated:req.session.isLogin})
+            res.render('auth/login',{layout:false,errors:"Password is incorrect",isAuthenticated:req.session.isLogin,us:req.session.user})
         }
     }).catch((err)=>{
         console.log(err)
-        res.render('auth/login',{layout:false,errors:"Email and password is incorrect",isAuthenticated:req.session.isLogin})
+        res.render('auth/login',{layout:false,errors:"Email and password is incorrect",isAuthenticated:req.session.isLogin,us:req.session.user})
     })
 }
 

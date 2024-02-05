@@ -31,7 +31,7 @@ sequelize
   .sync()
   .then(() => {
     app.listen(3000, function () {
-      console.log("app is running on port 3000");
+      console.log("app run on port 3000");
     });
   })
   .catch((err) => console.log(err));

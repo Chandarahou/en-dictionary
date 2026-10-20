@@ -10,7 +10,7 @@ const Data = myDb.define('data',{
         autoIncrement:true,
         allowNull:false,
         
-    },
+    },                    
     idUser:{
         type:DataTypes.INTEGER,
         allowNull:false,

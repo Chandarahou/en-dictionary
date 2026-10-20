@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express')
 const expressEjsLayout = require("express-ejs-layouts");
 const auth = require('./routes/auth')
@@ -10,7 +11,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const app = express();
 app.use(
   session({
-    secret: "keyboard cat",
+    secret: process.env.SESSION_SECRET,
     store: new SequelizeStore({
       db: sequelize,
     }),
@@ -30,7 +31,7 @@ app.use(auth,home)
 sequelize
   .sync()
   .then(() => {
-    app.listen(3000, function () {
+    app.listen(process.env.PORT || 3000, function () {
       console.log("app run on port 3000");
     });
   })
